@@ -1,5 +1,4 @@
 {
   "/page": "app/page.js",
-  "/menu/page": "app/menu/page.js",
-  "/api/telegram/route": "app/api/telegram/route.js"
+  "/menu/page": "app/menu/page.js"
 }

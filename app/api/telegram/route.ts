@@ -6,8 +6,8 @@ export async function POST(request: NextRequest) {
 
     // Telegram Bot API configuration
     // Iltimos, .env.local faylida TELEGRAM_BOT_TOKEN va TELEGRAM_CHAT_ID ni o'rnating
-    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || ''
-    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || ''
+    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8468735985:AAGiQkjemedBTno44UYwG1lshyRLBfz8vRQ'
+    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '1571070022'
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
       console.error('Telegram bot token yoki chat ID topilmadi!')
