@@ -46,7 +46,15 @@ export default function BookingPage() {
         }),
       })
 
-      const data = await response.json()
+      let data
+      try {
+        data = await response.json()
+      } catch (e) {
+        const text = await response.text()
+        console.error('Response is not JSON:', text)
+        alert(`Xatolik yuz berdi: Server javob bermadi. Iltimos, qayta urinib ko'ring.`)
+        return
+      }
       
       if (response.ok) {
         alert('Bron muvaffaqiyatli yuborildi! Tez orada siz bilan bog\'lanamiz.')

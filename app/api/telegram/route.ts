@@ -32,12 +32,17 @@ export async function POST(request: NextRequest) {
     })
 
     if (!response.ok) {
-      const errorData = await response.json()
+      let errorData
+      try {
+        errorData = await response.json()
+      } catch (e) {
+        errorData = { description: await response.text() || 'Noma\'lum xatolik' }
+      }
       console.error('Telegram API error:', errorData)
       return NextResponse.json(
         { 
           error: 'Telegram xabar yuborishda xatolik',
-          details: errorData.description || 'Noma\'lum xatolik'
+          details: errorData.description || errorData.error_description || 'Noma\'lum xatolik'
         },
         { status: response.status }
       )
